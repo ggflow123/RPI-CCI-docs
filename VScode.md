@@ -19,7 +19,9 @@ For **Mac,** feel free to check and follow this [link](https://www.petergirnus.c
 
 ## Step 2: Mount
 
-1. Setup a main directory on local computer to store contain all of our mount point
+### 1. Main Directory
+
+Setup a main directory on local computer to store contain all of our mount point:
 
 ```
 mkdir ~/mounts
@@ -27,19 +29,21 @@ cd ~/mounts
 mkdir home
 ```
 
-2. With SSHFS installed, create an connection to RPI CCI. The usage pattern is:
+### 2. Connect with SSHFS
+
+With SSHFS installed, create an connection to RPI CCI. The usage pattern is:
 
 ```
 sshfs <USERNAME>@<HOSTNAME>:/path/to/desired/directory /path/to/mount/point -o <OPTIONS>
 ```
 
-    A typical example is:
+A typical example is:
 
 ```
 sshfs EXPLname@blp01.ccni.rpi.edu:/gpfs/u/home/EXPL/EXPLname ~/mounts/home -o follow_symlinks
 ```
 
-    -o follow_symlinks is necessary because the home directory on CCI has barn, barn-shared, scratch and scratch-shared. Without symlinks, these shortcuts will remain blank. Refer to the same RPI[docs](https://docs.cci.rpi.edu/examples/Advanced_SSH/#remote-filesystem-mounting) for more details.
+-o follow_symlinks is necessary because the home directory on CCI has barn, barn-shared, scratch and scratch-shared. Without symlinks, these shortcuts will remain blank. Refer to the same RPI[docs](https://docs.cci.rpi.edu/examples/Advanced_SSH/#remote-filesystem-mounting) for more details.
 
 To unmount in terminal, do:
 
